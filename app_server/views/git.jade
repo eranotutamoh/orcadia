@@ -1,0 +1,48 @@
+extends layout
+
+block content
+    h1= title
+    dl
+        dt git init
+        dd <i>Initialise existing folder/project</i>
+        dt git clone
+        dd https://github.com/libgit2/libgit2   &nbsp; [mylibgitdirectory]
+        dt git add
+        dd <i>multipurpose command—you use it to begin tracking new files, to stage files, and
+            | to do other things like marking merge-conflicted files as resolved</i>
+        dt git status
+        dd [-s]
+        dt git config
+        dd -l
+        dt git diff
+        dd [--staged]
+        dt git commit
+        dd [-a] <i>Quick commit, skip add</i>&nbsp; -m
+        dt git rm
+        dd &lt;file.js&gt; <i>Removes from GIT AND deletes</i>
+        dt git rm
+        dd ---cached &lt;file.js&gt; <i>Removes from tracking but no delete</i>
+        dt git log
+        dd --oneline --decorate
+        dt git branch
+        dd <i>List branches</i> [-v] <i>see commits</i> [--merged --no-merged] <i>branches that you have or have not yet merged into the branch you’re currently on</i>
+        dt git branch
+        dd &lt;branchname&gt;
+        dt git branch
+        dd -d &lt;branchname&gt; <i>Delete branch</i>
+        dt git checkout
+        dd &nbsp;&nbsp;&lt;branchname&gt;
+        dt git checkout
+        dd -b &lt;branchname&gt; <i>Create branch and checkout in one</i>
+        dt git remote
+        dd add &lt;origin&gt; https://github.com/eranotutamoh/herokusiteexpress.git
+        dt git remote
+        dd -v &nbsp;<i>List remotes</i>
+        dt git push
+        dd &lt;origin&gt; &lt;branch/master&gt;
+        dt git merge
+        dd &lt;branchname&gt;
+
+
+
+
