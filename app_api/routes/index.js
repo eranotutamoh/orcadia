@@ -8,13 +8,13 @@ var auth = jwt({
 });
 
 var ctrlPages = require('../controllers/pages');
-var ctrlUsers = require('../controllers/users');
+//var ctrlUsers = require('../controllers/users');
 
 router.get('/pages', ctrlPages.pages);
 router.get('/page/:pageId', ctrlPages.getPage);
 router.post('/pageadd', ctrlPages.addPage);
-router.post('/register', ctrlUsers.register);
-router.post('/login', ctrlUsers.login);
+//router.post('/register', ctrlUsers.register);
+//router.post('/login', ctrlUsers.login);
 
 
 module.exports = router;
