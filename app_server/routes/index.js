@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var ctrlMain = require('../controllers/main');
+var ctrlIndex = require('../controllers/main');
 
 
+/* GET layout template */
+router.get('/', ctrlIndex.orcadia_template);
 
-/* GET home page. */
-router.get('/', ctrlMain.index);
 
 module.exports = router;

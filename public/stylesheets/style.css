@@ -1,8 +1,117 @@
 body {
-  padding: 50px;
+  background-color: #262B23;
+  margin: auto;
+  padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #333 ;
+}
+.width {
+  background-color: lightgray;
+  padding:25px;
+}
+h3.mobile {
+  position: fixed;
+  top: 0;
+  margin: 0;
+  height: 25px;
+  line-height: 25px;
+  background: darkgrey;
+  text-align: center;
+  width: 100%;
+}
+h3.mobile a {
+  color: yellow;
+  text-decoration: none;
+}
+nav {
+  background-color: gold;
+  display: none;
+  padding: 5px;
+  margin: auto;
+}
+nav.homescreen {
+  display: block;
+}
+@media only screen
+and (max-width : 800px) {
+  nav.homescreen a {
+    margin: 0 auto;
+    width: 220px;
+    background: palegoldenrod;
+    text-indent: 10px;
+  }
+}
+nav a {
+  color: #333;
+  display: block;
+  text-decoration: none;
+}
+nav a::before{
+  content: "\21D2";
+  color: indigo;
+  width: 20px;
+}
+nav a:active::before{
+  content: "\21D3";
+  color: gold;
+
+}
+nav a:hover::before{
+  content: "\21D0";
+  color: indigo;
 }
 
-a {
-  color: #00B7FF;
+@media only screen
+and (min-width : 801px) {
+  .width {
+    margin: 0 auto;
+    min-height: 500px;
+    padding: 25px 25px 25px 240px;
+    position: relative;
+    width: 759px;
+  }
+  nav {
+    background-color: gold;
+    display:block;
+    left: 30px;
+    padding: 5px;
+    position: absolute;
+    top: 47px;
+    width: 150px;
+  }
+  h3.mobile {
+    display: none;
+  }
+}
+.error {
+  color: #cc0683;
+  font-family: monospace;
+  margin: 0;
+}
+p {
+  white-space: pre-wrap;
+}
+
+dt, dd {
+  display: inline-block;
+  margin: 0 0 15px;
+  vertical-align: top;
+}
+dd {
+  width: 600px;
+}
+dt {
+  width: 100px;
+}
+dt::before { content: "$ "; }
+footer {
+  position: absolute;
+  bottom: 0;
+  margin: 0 0 5px 0;
+}
+footer p {
+  margin:0
+}
+orc-content p:last-child {
+  margin-bottom: 100px;
 }

@@ -1,0 +1,14 @@
+<div class="width" >
+    <h3 class="error">{{vm.formError }}</h3>
+    <nav  ng-controller='appy_menu' >
+        <orc-menu the-pages="pages"  show-secure="secure"></orc-menu>
+    </nav>
+    <form ng-submit="vm.onSubmit()">
+        <input id="name" ng-model="vm.credentials.name"><br>
+        <input id="password" ng-model="vm.credentials.password"><br>
+        <button type="submit" >Sign in!</button>
+    </form>
+    <footer>
+        <p>&copy; Jonathan Pierce 2016</p>
+    </footer>
+</div>

@@ -1,7 +1,24 @@
 doctype html
-html
+html(ng-app='app_orcadia')
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js')
+  script(src='/lib/angular-route.min.js')
+  script(src='app.js')
+  script(src='/home/home.controller.js')
+  script(src='/services/pages.js')
+  script(src='/services/page.js')
+  script(src='/filters/common.js')
+  meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+  title= title
+  link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    block content
+    div.width
+      h3.error {{ message }}
+      nav(ng-controller='appy_menu')
+          h6(ng-repeat='page in data.pages', menu-comp, page='page.pagename', title='page.title')
+      div(ng-view)
+        block content
+
+
+
+

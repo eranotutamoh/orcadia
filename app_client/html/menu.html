@@ -1,0 +1,4 @@
+<h5 ng-show="showSecure" class="ng-show"><a href="/#/video"> Videos</a></h5>
+<h5 ng-repeat="page in thePages | orderBy:'title'" >
+    <a href='/#/{{page.pagename}}'> {{page.title | capitalize}}</a>
+</h5>

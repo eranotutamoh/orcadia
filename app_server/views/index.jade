@@ -1,5 +1,7 @@
 extends layout
 
 block content
-  h1 Now in app_server!
-  p Welcome to #{title}
+  h1= title
+  input(ng-model="hw_mod")
+  h2 {{ hw_mod }}
+
