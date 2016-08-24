@@ -15,8 +15,8 @@ git remote -v
 //Dump (export) local database to temp storage
 $ mongodump -h localhost:27017 -d Orcadia -o ~/code/mongodump
 
-//Beam up local to remote
-  $ mongorestore -h ds139645.mlab.com:39645 -d orcadia -u orcadia_user -p Whatthefuck4 ~/code/mongodump/orcadia
+//Beam up (pages collection) local to remote
+  $ mongorestore -h ds139645.mlab.com:39645 -d orcadia -c pages  -u orcadia_user -p Whatthefuck4 ~/code/mongodump/orcadia/pages.bson
 
 
 // UPDATING LOCAL WITH REMOTE (commandline NOT mongo)

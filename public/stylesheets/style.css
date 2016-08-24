@@ -87,7 +87,7 @@ dt, dd {
 dt {
   margin-bottom: 5px;
 }
-dt::before { content: "$ "; }
+dl.command_line dt::before { content: "$ "; }
 footer {
   position: absolute;
   bottom: 0;
@@ -126,10 +126,10 @@ and (min-width : 801px) {
     display: none;
   }
   dd {
-    width: 600px;
+    width: 550px;
   }
   dt {
     margin-bottom: 15px;
-    width: 100px;
+    width: 150px;
   }
 }
