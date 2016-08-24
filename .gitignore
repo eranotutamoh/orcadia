@@ -28,7 +28,7 @@ node_modules
 
 # Environment variables
 .env
-
+notes.text
 # Optional npm cache directory
 .npm
 

@@ -13,10 +13,18 @@ git remote -v
 
 //  UPDATING REMOTE WITH LOCAL
 //Dump (export) local database to temp storage
-      $ mongodump -h localhost:27017 -d Orcadia -o ~/code/mongodump
+$ mongodump -h localhost:27017 -d Orcadia -o ~/code/mongodump
 
 //Beam up local to remote
   $ mongorestore -h ds139645.mlab.com:39645 -d orcadia -u orcadia_user -p Whatthefuck4 ~/code/mongodump/orcadia
+
+
+// UPDATING LOCAL WITH REMOTE (commandline NOT mongo)
+// Beam down from remote
+$ mongodump -h ds139645.mlab.com:39645 -d orcadia -c pages -u orcadia_user -p Whatthefuck4 -o ~/code/fromMlabDump
+
+//Restore local database from remote
+$ mongorestore --collection pages --db Orcadia  ~/code/fromMlabDump/orcadia/pages.bson
 
 
 mongo // enter shell
@@ -29,4 +37,6 @@ db.pages.insert([{pagename: '/' , title: 'orcadia', notes: 'This be the home pag
 
 db.pages.update(  {_id: ObjectId("57a26557258b5641d1251356")} ,  { pagename: 'git' , title: 'git commands', notes: 'My new GIT', code: 'GIT THE HELL OUT OF HERE' })
 
-db.pages.update({_id: ObjectId("57a26557258b5641d1251356")},  { $set : { notes : '<dl><dt>git init</dt><dd><i>Initialise existing folder/project</i></dd><dt>git clone</dt><dd>https://github.com/libgit2/libgit2   &nbsp; [mylibgitdirectory]</dd><dt>git add</dt><dd><i>multipurpose command—you use it to begin tracking new files, to stage files, and to do other things like marking merge-conflicted files as resolved</i></dd><dt>git status</dt><dd>[-s]</dd><dt>git config</dt><dd>-l</dd><dt>git diff</dt><dd>[--staged]</dd><dt>git commit</dt><dd>[-a] <i>Quick commit, skip add</i>&nbsp; -m</dd><dt>git rm</dt><dd>&lt;file.js&gt; <i>Removes from GIT AND deletes</i></dd><dt>git rm</dt><dd>---cached &lt;file.js&gt; <i>Removes from tracking but no delete</i></dd><dt>git log</dt><dd>--oneline --decorate</dd><dt>git branch</dt><dd><i>List branches</i> [-v] <i>see commits</i> [--merged --no-merged] <i>branches that you have or have not yet merged into the branch you’re currently on</i></dd><dt>git branch</dt><dd>&lt;branchname&gt;</dd><dt>git branch</dt><dd>-d &lt;branchname&gt; <i>Delete branch</i></dd><dt>git checkout</dt><dd>&nbsp;&nbsp;&lt;branchname&gt;</dd><dt>git checkout</dt><dd>-b &lt;branchname&gt; <i>Create branch and checkout in one</i></dd><dt>git remote</dt><dd>add &lt;origin&gt; https://github.com/eranotutamoh/herokusiteexpress.git</dd><dt>git remote</dt><dd>-v &nbsp;<i>List remotes</i></dd><dt>git push</dt><dd>&lt;origin&gt; &lt;branch/master&gt;</dd><dt>git merge</dt><dd>&lt;branchname&gt;</dd></dl>'}});
+db.pages.update({_id: ObjectId("57a26d4065c527180c30fe45")},  { $set : { code : 'function() {\n\tvar this = yay;\n\tif(!this) {\n\t\treturn\n\t}\n}'}});
+
+db.pages.remove( {"pagename":"Gazza"});
