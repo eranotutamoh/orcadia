@@ -6,7 +6,8 @@ function config ($routeProvider, $locationProvider) {
             redirectTo: '/orcadia'
         })
         .when('/orcadia', {
-            templateUrl: 'home/homescreen.view.html'
+            templateUrl: 'home/homescreen.view.html',
+            controller: 'landing'
         })
         .when('/login', {
             templateUrl: 'home/login.view.html',
@@ -33,7 +34,7 @@ function config ($routeProvider, $locationProvider) {
 }
 
 /// menu controller
-var app_menu = function($rootScope, $scope, pages_ser, authentication) {
+var app_menu = function($rootScope, $scope, pages_ser, authentication, $location) {
     $rootScope.message = 'Looking up content.'
     pages_ser
         .success(function(data) {

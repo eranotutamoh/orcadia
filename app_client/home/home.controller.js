@@ -1,5 +1,6 @@
 angular
     .module('app_orcadia')
+    .controller('landing', homeScreenCtrl)
     .controller('appy_home', homeCtrl)
     .controller('appy_login', loginCtrl)
     .controller('appy_video', videoCtrl)
@@ -33,6 +34,10 @@ function videoCtrl($location, authentication) {
     }
 
 
+}
+
+function homeScreenCtrl($location) {
+    if (window.screen.width > 800) $location.path('/concepts');
 }
 
 function loginCtrl($location, authentication) {
