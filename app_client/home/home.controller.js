@@ -10,7 +10,8 @@ angular
 function homeCtrl($rootScope, page_ser, $routeParams) {
     var vm = this;
     var pageID = $routeParams.pageID;
-
+    vm.width = 'W: '+window.screen.width;
+    vm.height = 'H: '+window.screen.height;
     $rootScope.message = ''
     page_ser.pageByID(pageID)
         .success(function (data) {
@@ -36,7 +37,6 @@ function videoCtrl($location, authentication) {
 }
 
 function homeScreenCtrl($location) {
-    //alert("LANDED")
     if (window.screen.width > 800) $location.path('/concepts');
     else $location.path('/orcadia');
 }
