@@ -11,8 +11,7 @@ function homeCtrl($rootScope, page_ser, $routeParams) {
     var vm = this;
     var pageID = $routeParams.pageID;
 
-    $rootScope.message = 'Looking up content.'
-
+    $rootScope.message = ''
     page_ser.pageByID(pageID)
         .success(function (data) {
             vm.page = data;
@@ -37,7 +36,9 @@ function videoCtrl($location, authentication) {
 }
 
 function homeScreenCtrl($location) {
+    //alert("LANDED")
     if (window.screen.width > 800) $location.path('/concepts');
+    else $location.path('/orcadia');
 }
 
 function loginCtrl($location, authentication) {

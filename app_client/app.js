@@ -3,11 +3,14 @@ angular.module('app_orcadia', ['ngRoute', 'ngSanitize']);
 function config ($routeProvider, $locationProvider) {
     $routeProvider
         .when('/', {
-            redirectTo: '/orcadia'
+            redirectTo: '/landing'
+        })
+        .when('/landing', {
+            template: '',
+            controller: 'landing'
         })
         .when('/orcadia', {
             templateUrl: 'home/homescreen.view.html',
-            controller: 'landing'
         })
         .when('/login', {
             templateUrl: 'home/login.view.html',
@@ -25,7 +28,7 @@ function config ($routeProvider, $locationProvider) {
             controllerAs: 'vm'
         })
 
-        .otherwise({redirectTo: '/home'});
+        .otherwise({redirectTo: '/orcadia'});
 
     $locationProvider.html5Mode({
         enabled: true,
@@ -35,7 +38,7 @@ function config ($routeProvider, $locationProvider) {
 
 /// menu controller
 var app_menu = function($rootScope, $scope, pages_ser, authentication, $location) {
-    $rootScope.message = 'Looking up content.'
+    $rootScope.message = '';
     pages_ser
         .success(function(data) {
             $scope.pages =  data  ;
