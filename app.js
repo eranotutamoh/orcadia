@@ -35,13 +35,15 @@ app.use(passport.initialize());
 app.use('/api', routesApi);
 //app.use('/users', users);
 
+
+//Load our skeleton index HTML
 app.use(function(req, res) {
   res.sendfile(path.join(__dirname, 'app_client', 'index.html'));
 });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found Eranot UTAMOH!');
+  var err = new Error('Not Found!');
   err.status = 404;
   next(err);
 });

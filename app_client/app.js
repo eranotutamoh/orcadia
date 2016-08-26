@@ -28,7 +28,7 @@ function config ($routeProvider, $locationProvider) {
             controllerAs: 'vm'
         })
 
-        .otherwise({redirectTo: '/orcadia'});
+        .otherwise({redirectTo: '/'});
 
     $locationProvider.html5Mode({
         enabled: true,

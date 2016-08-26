@@ -1,3 +1,5 @@
+@import "timer.css";
+
 body {
   background-color: #262B23;
   margin: auto;
@@ -69,6 +71,9 @@ nav a:hover::before{
   color: #cc0683;
   font-family: monospace;
   margin: 0;
+}
+span {
+  font-family: monospace;
 }
 p {
   white-space: pre-wrap;

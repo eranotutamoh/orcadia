@@ -7,14 +7,18 @@ angular
     .directive('orcContent', content_dir)
     .directive('orcVideo', video_dir)
 
-function homeCtrl($rootScope, page_ser, $routeParams) {
+function homeCtrl($rootScope, page_ser, $routeParams, $scope) {
     var vm = this;
     var pageID = $routeParams.pageID;
+    $scope.loading = true;
     vm.width = 'W: '+window.screen.width;
     vm.height = 'H: '+window.screen.height;
-    $rootScope.message = ''
+    vm.updated  = window.document.lastModified;
+
     page_ser.pageByID(pageID)
         .success(function (data) {
+            debugger
+            $scope.loading = false;
             vm.page = data;
             $rootScope.message = typeof(data) === 'object' ? "" : "No content found";
 

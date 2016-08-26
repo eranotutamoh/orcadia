@@ -4,8 +4,13 @@
     <nav  ng-controller='appy_menu' >
         <orc-menu the-pages="pages" show-secure="secure"></orc-menu>
     </nav>
+    <div class="wrapper" ng-show="loading">
+        <div class="pie spinner"></div>
+        <div class="pie filler"></div>
+        <div class="mask"></div>
+    </div>
     <orc-content the-content="vm.page"></orc-content>
     <footer>
-        <p>&copy; Jonathan Pierce 2016  {{vm.width}}{{vm.height}}</p>
+        <p>&copy; Jonathan Pierce 2016&nbsp;&nbsp;<small><small>{{vm.width}}&nbsp;{{vm.height}}&nbsp;&nbsp;<small>{{vm.updated}}</small></small></small></p>
     </footer>
 </div>
