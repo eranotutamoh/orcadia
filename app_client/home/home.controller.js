@@ -17,7 +17,6 @@ function homeCtrl($rootScope, page_ser, $routeParams, $scope) {
 
     page_ser.pageByID(pageID)
         .success(function (data) {
-            debugger
             $scope.loading = false;
             vm.page = data;
             $rootScope.message = typeof(data) === 'object' ? "" : "No content found";

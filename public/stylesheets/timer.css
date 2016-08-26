@@ -1,6 +1,6 @@
 .wrapper {
     position: relative;
-    margin: 40px auto;
+    margin: 40px;
     background: lightgray;
 }
 
@@ -11,8 +11,8 @@
 }
 
 .wrapper {
-    width: 250px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
 }
 
 .wrapper .pie {
