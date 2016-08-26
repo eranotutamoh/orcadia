@@ -29,6 +29,7 @@
     z-index: 200;
     border-right: none;
     animation: rota 5s linear infinite;
+    animation-delay: .5s;
 }
 
 .wrapper:hover .spinner,
@@ -53,7 +54,7 @@
     background: inherit;
     opacity: 1;
     z-index: 300;
-    animation: opa 5s steps(1, end) infinite;
+    animation: opa 5s  steps(1, end) infinite;
 }
 
 @keyframes rota {

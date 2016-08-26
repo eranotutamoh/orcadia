@@ -10,7 +10,7 @@ angular
 function homeCtrl($rootScope, page_ser, $routeParams, $scope) {
     var vm = this;
     var pageID = $routeParams.pageID;
-    $scope.loading = true;
+    setTimeout($scope.loading = true , 500);
     vm.width = 'W: '+window.screen.width;
     vm.height = 'H: '+window.screen.height;
     vm.updated  = window.document.lastModified;
