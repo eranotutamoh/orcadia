@@ -44,6 +44,7 @@
     opacity: 0;
     z-index: 100;
     animation: opa 5s steps(1, end) infinite reverse;
+    animation-delay: .5s;
     border-left: none;
 }
 
@@ -55,6 +56,7 @@
     opacity: 1;
     z-index: 300;
     animation: opa 5s  steps(1, end) infinite;
+    animation-delay: .5s;
 }
 
 @keyframes rota {
