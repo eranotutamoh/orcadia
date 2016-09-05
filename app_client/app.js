@@ -37,43 +37,36 @@ function config ($routeProvider, $locationProvider) {
 }
 
 /// menu controller
-var app_menu = function($rootScope, $scope, pages_ser, authentication, $location) {
-    $rootScope.message = '';
+var app_menu = function(pages_ser, authentication) {
 
-    $scope.success   = false;
-    $scope.error       = false;
-
+    var menu_scope = this;
+    menu_scope.error = false;
     var askForPromise = pages_ser.pages();
 
     askForPromise.then(
         // OnSuccess function
         function(answer) {
-            $scope.pages = answer.data;
-            $rootScope.message = answer.data.length > 0 ? "" : "No content found";
-            $scope.success = true;
+            menu_scope.pages = (typeof(answer.data) === 'object') ? answer.data : [];
+            if(!menu_scope.pages.length > 0 ) {
+                menu_scope.msg = 'No data returned.';
+                menu_scope.error = true;
+            }
         },
         // OnFailure function
         function(reason) {
-            $scope.somethingWrong = reason;
-            $rootScope.message = "Sorry, something's gone wrong.";
-            $scope.error = true;
+            console.error(reason)
+            menu_scope.error = true;
+            menu_scope.msg = "Sorry, something's gone wrong.";
         }
     )
-    
-    
-    
-    
-    $scope.secure =  authentication.isLoggedIn();
+
+    menu_scope.secure =  authentication.isLoggedIn();
 };
 
 //menu directive
 var menu_dir = function () {
     return {
         restrict: 'E',
-        scope: {
-            thePages: '=',
-            showSecure: '='
-        },
         templateUrl: 'html/menu.html'
     };
 };

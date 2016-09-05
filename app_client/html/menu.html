@@ -1,4 +1,5 @@
-<h5 ng-show="showSecure" class="ng-show"><a href="/#/video"> Videos</a></h5>
-<h5 ng-repeat="page in thePages | orderBy:'title'" >
+<h4 class="error" ng-show="menu_scope.error" >{{menu_scope.msg}}</h4>
+<h5 ng-show="menu_scope.secure" class="ng-show"><a href="/#/video"> Videos</a></h5>
+<h5 ng-repeat="page in menu_scope.pages | orderBy:'title'" >
     <a href='/#/{{page.pagename}}'> {{page.title | capitalize}}</a>
 </h5>

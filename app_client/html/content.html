@@ -1,3 +1,3 @@
-<h1>{{ theContent.title }}</h1>
-<section ng-bind-html="theContent.notes | addHtmlLineBreaks"></section>
-<pre class="code">{{ theContent.code}}</pre>
+<h1>{{ vm.page.title }}</h1>
+<section ng-bind-html="vm.page.notes | addHtmlLineBreaks"></section>
+<pre class="code">{{vm.page.code}}</pre>

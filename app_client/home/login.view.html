@@ -1,6 +1,6 @@
 <div class="width" >
     <h3 class="error">{{vm.formError }}</h3>
-    <nav  ng-controller='appy_menu' >
+    <nav  ng-controller='appy_menu as menu_scope' >
         <orc-menu the-pages="pages"  show-secure="secure"></orc-menu>
     </nav>
     <form ng-submit="vm.onSubmit()">

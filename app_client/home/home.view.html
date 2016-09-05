@@ -1,16 +1,15 @@
 <h3 class="mobile"><a href="/#/orcadia">O_R_C_A_D_I_A</a></h3>
 <div class="width" >
-    <h3 class="error">{{ message }}</h3>
-    <nav  ng-controller='appy_menu' >
-
-        <orc-menu the-pages="pages" show-secure="secure"></orc-menu>
+    <h3 class="error">{{ vm.msg }}</h3>
+    <nav  ng-controller='appy_menu as menu_scope' >
+        <orc-menu></orc-menu>
     </nav>
-    <div class="wrapper" ng-show="loading">
+    <div class="wrapper" ng-show="vm.loading">
         <div class="pie spinner"></div>
         <div class="pie filler"></div>
         <div class="mask"></div>
     </div>
-    <orc-content the-content="vm.page"></orc-content>
+    <orc-content></orc-content>
     <footer>
         <p>&copy; Jonathan Pierce 2016&nbsp;&nbsp;<small><small>{{vm.width}}&nbsp;{{vm.height}}&nbsp;&nbsp;<small>{{vm.updated}}</small></small></small></p>
     </footer>

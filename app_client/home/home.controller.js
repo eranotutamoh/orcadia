@@ -7,25 +7,32 @@ angular
     .directive('orcContent', content_dir)
     .directive('orcVideo', video_dir)
 
-function homeCtrl($rootScope, page_ser, $routeParams, $scope) {
-    var vm = this;
-    var pageID = $routeParams.pageID;
-    $scope.loading = true;
+function homeCtrl(page_ser, $routeParams) {
+    var vm = this,
+        pageID = $routeParams.pageID,
+        askForPromise = page_ser.pageByID(pageID);
+    vm.loading = true;
     vm.width = 'W: '+window.screen.width;
     vm.height = 'H: '+window.screen.height;
     vm.updated  = window.document.lastModified;
 
-    page_ser.pageByID(pageID)
-        .success(function (data) {
-            $scope.loading = false;
-            vm.page = data;
-            $rootScope.message = typeof(data) === 'object' ? "" : "No content found";
-        })
-        .error(function (e) {
-            $rootScope.message = "Sorry, something's gone wrong.";
-            $scope.loading = false;
-            console.log(e);
-        });
+    askForPromise.then(
+        // OnSuccess function
+        function(answer) {
+            vm.page = (typeof(answer.data) === 'object') ? answer.data : '';
+            if(!vm.page) {
+                vm.msg = 'No data returned.';
+                vm.error = true;
+            }
+            vm.loading = false;
+        },
+        // OnFailure function
+        function(reason) {
+            console.error(reason)
+            vm.msg = "Sorry, something's gone wrong.";
+            vm.error = true;
+        }
+    )
 };
 
 function videoCtrl($location, authentication) {
@@ -82,9 +89,6 @@ function video_dir() {
 function content_dir() {
     return {
         restrict: 'E',
-        scope: {
-            theContent: '='
-        },
         templateUrl: 'html/content.html'
     };
 };

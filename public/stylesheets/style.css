@@ -27,6 +27,9 @@ h1 {
 h5 {
   margin-bottom: 0;
 }
+h5:last-child {
+  margin-bottom: 14px;
+}
 h3.mobile {
   position: fixed;
   top: 0;
@@ -57,6 +60,9 @@ and (max-width : 800px) {
     width: 220px;
     background: palegoldenrod;
     text-indent: 10px;
+  }
+  pre {
+    white-space: pre-line;
   }
 }
 nav a {

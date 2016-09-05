@@ -1,5 +1,7 @@
 git push heroku master  // go up to heroku!
 
+git push origin master  // to GIT
+
 git remote -v
 
 // To connect using the mongo shell:
