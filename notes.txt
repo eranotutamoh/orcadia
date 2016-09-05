@@ -40,3 +40,11 @@ db.pages.update(  {_id: ObjectId("57a26557258b5641d1251356")} ,  { pagename: 'gi
 db.pages.update({_id: ObjectId("57a26d4065c527180c30fe45")},  { $set : { code : 'function() {\n\tvar this = yay;\n\tif(!this) {\n\t\treturn\n\t}\n}'}});
 
 db.pages.remove( {"pagename":"Gazza"});
+
+/// mLab new document template
+{
+    "pagename": "XXXXX",
+    "title": "XXXXXX",
+    "notes": "XXXXXXX",
+    "code": "XXXXXX"
+}

@@ -20,10 +20,10 @@ function homeCtrl($rootScope, page_ser, $routeParams, $scope) {
             $scope.loading = false;
             vm.page = data;
             $rootScope.message = typeof(data) === 'object' ? "" : "No content found";
-
         })
         .error(function (e) {
             $rootScope.message = "Sorry, something's gone wrong.";
+            $scope.loading = false;
             console.log(e);
         });
 };

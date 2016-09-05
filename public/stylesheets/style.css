@@ -1,5 +1,13 @@
 @import "timer.css";
 
+/* Help prevent page flash */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important; }
+
+html {
+  overflow-y: scroll;
+}
+
 body {
   background-color: #262B23;
   margin: auto;
@@ -15,6 +23,9 @@ body {
 }
 h1 {
   margin-top: 0;
+}
+h5 {
+  margin-bottom: 0;
 }
 h3.mobile {
   position: fixed;
@@ -75,11 +86,8 @@ nav a:hover::before{
 span {
   font-family: monospace;
 }
-p {
-  white-space: pre-wrap;
-}
-p.code{
-  font-family: monospace;
+
+pre {
   line-height: 19px;
 }
 dt, dd {
