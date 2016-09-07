@@ -151,4 +151,8 @@ and (min-width : 801px) {
     margin-bottom: 15px;
     width: 150px;
   }
+  p, ul, ol, dl {
+    padding-right:50px;
+    line-height: 20px;
+  }
 }
