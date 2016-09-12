@@ -26,7 +26,7 @@ $ mongodump -h localhost:27017 -d Orcadia -o ~/code/mongodump
 $ mongodump -h ds139645.mlab.com:39645 -d orcadia -c pages -u orcadia_user -p Whatthefuck4 -o ~/code/fromMlabDump
 
 //Restore local database from remote
-$ mongorestore --collection pages --db Orcadia  ~/code/fromMlabDump/orcadia/pages.bson
+$ mongorestore --collection pages --db Orcadia  ~/code/fromMlabDump/orcadia/pages.bson --drop
 
 
 mongo // enter shell
@@ -37,11 +37,12 @@ show collections
 db.pages.find()
 db.pages.insert([{pagename: '/' , title: 'orcadia', notes: 'This be the home page mon', code: 'Some code HERE'}])
 
-db.pages.update(  {_id: ObjectId("57a26557258b5641d1251356")} ,  { pagename: 'git' , title: 'git commands', notes: 'My new GIT', code: 'GIT THE HELL OUT OF HERE' })
+db.pages.update(  {_id: ObjectId("57ba74e574319d0f00f40eaf")} ,  { pagename: 'git' , title: 'git commands', notes: 'My new GIT', code: 'GIT THE HELL OUT OF HERE' })
 
 db.pages.update({_id: ObjectId("57a26d4065c527180c30fe45")},  { $set : { code : 'function() {\n\tvar this = yay;\n\tif(!this) {\n\t\treturn\n\t}\n}'}});
 
-db.pages.remove( {"pagename":"Gazza"});
+db.pages.remove( {"pagename":"git"});
+db.pages.remove(  {_id: ObjectId("57a2a60fce52171718a6350b")})
 
 /// mLab new document template
 {

@@ -1,0 +1,26 @@
+<section ng-controller="model as ctrl">
+    <form ng-submit="ctrl.submit()">
+        <button type='button' ng-click="ctrl.fill()">fill form</button>
+        <button type='button' ng-click="ctrl.clear()">clear form</button>
+        <fieldset>
+            <legend>Person</legend>
+            <label>first name</label>
+            <input type="text" ng-model="ctrl.person.first">
+            <label>middle name</label>
+            <input type="text" ng-model="ctrl.person.middle">
+            <label>last name</label>
+            <input type="text" ng-model="ctrl.person.last">
+        </fieldset>
+        <fieldset>
+            <legend>Address</legend>
+            <label>street</label>
+            <input type="text" ng-model="ctrl.address.street">
+            <label>suburb</label>
+            <input type="text" ng-model="ctrl.address.suburb">
+            <label>city</label>
+            <input type="text" ng-model="ctrl.address.city">
+        </fieldset>
+        <input type="submit" value="Submit">
+    </form>
+
+</section>

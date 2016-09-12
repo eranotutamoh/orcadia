@@ -12,6 +12,9 @@ function config ($routeProvider, $locationProvider) {
         .when('/orcadia', {
             templateUrl: 'home/homescreen.view.html',
         })
+        .when('/examples', {
+            templateUrl: 'home/examples.view.html'
+        })
         .when('/login', {
             templateUrl: 'home/login.view.html',
             controller: 'appy_login',

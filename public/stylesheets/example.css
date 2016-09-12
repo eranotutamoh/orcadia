@@ -1,0 +1,75 @@
+.formats {
+    overflow-y: auto;
+    height: 370px;
+    margin-bottom: 50px;
+    box-shadow: 0 5px 5px #CCC;
+    border-bottom-style: inset;
+    border-bottom: 1px solid #BBB;
+}
+.tab-content {
+    margin-bottom: 20px;
+}
+.tabs {
+    margin-top: 11px;
+    padding: 0;
+}
+.tabs li {
+    background-color: #BFBFBF;
+    border: 2px solid  gold;
+    border-bottom: none;
+    display: inline-block;
+    margin: 10px 10px 0 0;
+    text-align: center;
+    width: 120px
+}
+.tabs a {
+    display: block;
+    color: gold;
+    text-decoration: none;
+}
+.tabs li.active {
+    border-color: #CCC;
+
+}
+.tabs li.active a {
+    cursor: default;
+    border-color: white;
+    color: white;
+}
+form {
+    border: 1px solid orange;
+    display: inline-block;
+    margin: 0 50px;
+    padding: 10px 10px 0;
+}
+
+fieldset {
+    border-color: darkseagreen;
+    margin-top: 15px;
+    padding: 10px 10px 0;
+}
+
+label {
+    font-size: 11px;
+}
+
+input {
+    display: block;
+    margin-bottom: 15px;
+    width: 150px;
+}
+
+input[type="submit"] {
+    background-color: chartreuse;
+    color: #666;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin: 10px;
+    padding: 5px 1px;
+    text-shadow: 2px 1px 1px white;
+    width: 80px;
+}
+p.time  {
+    font-family: 'Hiragino Kaku Gothic ProN monospace';
+    font-size: 2em;
+}

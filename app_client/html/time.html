@@ -1,0 +1,43 @@
+<div ng-controller="time">
+    <p class='time' my-current-time="format"></p>
+    <label><small>Date format:</small></label> <input ng-model="format">
+</div>
+
+<section class="formats">
+    <p>'yyyy': 4 digit representation of year (e.g. AD 1 => 0001, AD 2010 => 2010)</p>
+    <p>'yy': 2 digit representation of year, padded (00-99). (e.g. AD 2001 => 01, AD 2010 => 10)</p>
+    <p>'y': 1 digit representation of year, e.g. (AD 1 => 1, AD 199 => 199)</p>
+    <p>'MMMM': Month in year (January-December)</p>
+    <p>'MMM': Month in year (Jan-Dec)</p>
+    <p>'MM': Month in year, padded (01-12)</p>
+    <p>'M': Month in year (1-12)</p>
+    <p>'LLLL': Stand-alone month in year (January-December)</p>
+    <p>'dd': Day in month, padded (01-31)</p>
+    <p>'d': Day in month (1-31)</p>
+    <p>'EEEE': Day in Week,(Sunday-Saturday)</p>
+    <p>'EEE': Day in Week, (Sun-Sat)</p>
+    <p>'HH': Hour in day, padded (00-23)</p>
+    <p>'H': Hour in day (0-23)</p>
+    <p>'hh': Hour in AM/PM, padded (01-12)</p>
+    <p>'h': Hour in AM/PM, (1-12)</p>
+    <p>'mm': Minute in hour, padded (00-59)</p>
+    <p>'m': Minute in hour (0-59)</p>
+    <p>'ss': Second in minute, padded (00-59)</p>
+    <p>'s': Second in minute (0-59)</p>
+    <p>'sss': Millisecond in second, padded (000-999)</p>
+    <p>'a': AM/PM marker</p>
+    <p>'Z': 4 digit (+sign) representation of the timezone offset (-1200-+1200)</p>
+    <p>'ww': Week of year, padded (00-53). Week 01 is the week with the first Thursday of the year</p>
+    <p>'w': Week of year (0-53). Week 1 is the week with the first Thursday of the year</p>
+    <p>'G', 'GG', 'GGG': The abbreviated form of the era string (e.g. 'AD')</p>
+    <p>'GGGG': The long form of the era string (e.g. 'Anno Domini')</p>
+    <p>'medium': equivalent to 'MMM d, y h:mm:ss a' for en_US locale (e.g. Sep 3, 2010 12:05:08 PM)</p>
+    <p>'short': equivalent to 'M/d/yy h:mm a' for en_US locale (e.g. 9/3/10 12:05 PM)</p>
+    <p>'fullDate': equivalent to 'EEEE, MMMM d, y' for en_US locale (e.g. Friday, September 3, 2010)</p>
+    <p>'longDate': equivalent to 'MMMM d, y' for en_US locale (e.g. September 3, 2010)</p>
+    <p>'mediumDate': equivalent to 'MMM d, y' for en_US locale (e.g. Sep 3, 2010)</p>
+    <p>'shortDate': equivalent to 'M/d/yy' for en_US locale (e.g. 9/3/10)</p>
+    <p>'mediumTime': equivalent to 'h:mm:ss a' for en_US locale (e.g. 12:05:08 PM)</p>
+    <p>'shortTime': equivalent to 'h:mm a' for en_US locale (e.g. 12:05 PM)</p>
+    <p>format string can contain literal values. These need to be escaped by surrounding with single quotes (e.g. "h 'in the morning'"). In order to output a single quote, escape it - i.e., two single quotes in a sequence (e.g. "h 'o''clock'").</p>
+</section>
