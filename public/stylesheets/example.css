@@ -1,11 +1,3 @@
-.formats {
-    overflow-y: auto;
-    height: 370px;
-    margin-bottom: 50px;
-    box-shadow: 0 5px 5px #CCC;
-    border-bottom-style: inset;
-    border-bottom: 1px solid #BBB;
-}
 .tab-content {
     margin-bottom: 20px;
 }
@@ -35,6 +27,62 @@
     cursor: default;
     border-color: white;
     color: white;
+}
+.fade {
+    animation: fadeout 1.5s linear forwards;
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+dl {
+    font-family: monospace;
+    font-size: 1.2em;
+    color: blueviolet;
+}
+dt {
+    width: 140px;
+    color: orangered;
+}
+dl.wally dt {
+    color: magenta;
+}
+dl.wally dd {
+    color: seagreen;
+}
+.homer h3 {
+    color: palevioletred;
+    font-family: inherit;
+}
+.homer span {
+    font-family: inherit;
+}
+.homer span:nth-child(2) {
+        color: green   ;
+}
+.homer span:first-child {
+    color: sienna;
+}
+.homer span:last-child {
+    color: blue;
+}
+.formats {
+    overflow-y: auto;
+    height: 370px;
+    margin-bottom: 50px;
+    box-shadow: 0 5px 5px #CCC;
+    border-bottom-style: inset;
+    border-bottom: 1px solid #BBB;
+}
+p.time  {
+    font-family: 'Hiragino Kaku Gothic ProN monospace';
+    font-size: 2em;
 }
 form {
     border: 1px solid orange;
@@ -69,7 +117,23 @@ input[type="submit"] {
     text-shadow: 2px 1px 1px white;
     width: 80px;
 }
-p.time  {
-    font-family: 'Hiragino Kaku Gothic ProN monospace';
-    font-size: 2em;
+
+form .ng-pristine {
+    background-color: aquamarine;
 }
+form .ng-dirty {
+    background-color: darkslateblue;
+}
+form .ng-touched {
+    background-color: coral;
+}
+form .ng-untouched {
+    background-color: gold ;
+}
+form .ng-valid.ng-touched {
+    background-color: chartreuse;
+}
+form .ng-invalid.ng-touched {
+    background-color: crimson;
+}
+

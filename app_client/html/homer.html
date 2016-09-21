@@ -1,0 +1,7 @@
+<div ng-controller="homer as c" class="homer">
+    <h3>One Fish, <span>Two Fish,</span><span> Blowfish,</span> <span>Blue Fish.</span></h3>
+    <dl homerific sel="selected" the-speaker="c.speaker" the-text="c.text" next-line="c.newLine()"  ng-class="{'wally' : they == 'Homer', 'fade' : fade}">
+        <dt ng-if="they">{{they}}</dt>
+        <dd>{{saying}}</dd>
+    </dl>
+</div>
