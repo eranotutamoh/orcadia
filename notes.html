@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+// ANGULAR II
+<h5>Scopes</h5>
+<p>Scope access through DOM nodes: <span>angular.element(document).find('orc-content').scope()</span><br>
+    Production code best practice $compileProvider.debugInfoEnabled is set to false, calling .scope() on a DOM node will
+    return undefined.
+    You can still access the scope through the console: <span>angular.reloadWithDebugInfo()</span>
+</p>
+<p>Many directives create child scopes such as ngRepeat, ngIf, and ngController. When resolving a model, the lookup
+    starts on the current scope and goes through every parent scope, all the way to $rootScope.
+    If the model is a primitive, the child scope will just create a new model. But if the change is to a property of a
+    model object, the lookup on parent scopes will find the referenced object and change its actual property. A new
+    model would not be set on the current scope, so no masking would occur.
+</p>
+<p>Whenever you need a directive that you know will be used in a single place, or which you don’t expect to conflict
+    with whatever environment it is used in, there is no need to use isolated scope.Core angular directives don’t use isolated scope at all.<br>
+    There are two main reasons: you can’t apply two isolated scope directives to an element, and you may encounter
+    issues with nesting / inheritance / event processing. Especially regarding transclusion - the effects may not be
+    what you expect.</p>
+
+<p>Using the scope option in directive you can:</p>
+<ul>
+    <li>create a child scope prototypically inherited with scope: true</li>
+    <li>create an isolated scope with scope: {} then you can bind some property to parent scopes with '@', '&', '='.</li>
+    <li>decide to not create a new scope and use parent with scope: false (default).</li>
+</ul>
+
+<h5>Garbage</h5>
+<p>The following need to be manually cleaned up:</p>
+<ol>
+    <li>Any watchers that are not bound to the current scope (e.g. bound to $rootScope)</li>
+    <li>Intervals</li>
+    <li>Timeouts</li>
+    <li>Variables referencing DOM in directives</li>
+    <li>Dodgy jQuery plugins, e.g. those that don’t have handlers reacting to the JavaScript $destroy event</li>
+</ol>
+<p>An object is essentially a hashtable of name-value pairs where the names (i.e., keys) are strings. And they are always strings. In fact, when an object other than a string is used as a key in JavaScript, no error occurs; rather, JavaScript silently converts it to a string and uses that value as the key instead.</p>
+g
