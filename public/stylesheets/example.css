@@ -5,6 +5,13 @@
     margin-top: 11px;
     padding: 0;
 }
+@media only screen
+and (max-width : 800px) {
+    .tabs {
+        margin-top: 0;
+        text-align: center;
+    }
+}
 .tabs li {
     background-color: #BFBFBF;
     border: 2px solid  gold;
@@ -55,6 +62,9 @@ dl.wally dt {
 }
 dl.wally dd {
     color: seagreen;
+}
+.homer {
+    min-height: 370px;
 }
 .homer h3 {
     color: palevioletred;
